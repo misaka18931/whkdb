@@ -15,6 +15,8 @@
 #include <GLES2/gl2.h>
 #endif
 #include <GLFW/glfw3.h> // Will drag system OpenGL headers
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
 
 // [Win32] Our example includes a copy of glfw3.lib pre-compiled with VS2010 to maximize ease of testing and compatibility with old VS compilers.
 // To link with VS2010-era libraries, VS2015+ requires linking with legacy_stdio_definitions.lib, which we do using this pragma.
@@ -128,9 +130,9 @@ int main(int, char**)
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/DroidSans.ttf", 16.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/Roboto-Medium.ttf", 16.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/Cousine-Regular.ttf", 15.0f);
-    ImFont* my_ui_font = io.Fonts->AddFontFromFileTTF("/usr/share/fonts/TTF/Fira Code Retina Nerd Font Complete Mono.ttf", 18.0);
+    ImFont* my_ui_font = io.Fonts->AddFontFromFileTTF("/usr/share/fonts/TTF/FiraCode-Regular.ttf", 22.0);
     ImFontConfig my_font_config; my_font_config.MergeMode = 1;
-    io.Fonts->AddFontFromFileTTF("/usr/share/fonts/TTF/Fira Code Retina Nerd Font Complete Mono.ttf", 16.0f, &my_font_config, io.Fonts->GetGlyphRangesDefault());
+    // io.Fonts->AddFontFromFileTTF("/usr/share/fonts/TTF/Fira Code Retina Nerd Font Complete Mono.ttf", 16.0f, &my_font_config, io.Fonts->GetGlyphRangesDefault());
     
     // io.Fonts->AddFontFromFileTTF("/usr/share/fonts/TTF/Fira Code Retina Nerd Font Complete Mono.ttf", 16.0f, &my_font_config);
     io.Fonts->Build();

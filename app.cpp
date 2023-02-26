@@ -9,10 +9,10 @@ ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 void work() {
   // Our state
   static bool show_demo_window = true;
-  static bool show_another_window = false;
   // 1. Show the big demo window (Most of the sample code is in
   // ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear
   // ImGui!).
+  // ImGui::ShowDebugLogWindow();
   if (show_demo_window)
     ImGui::ShowDemoWindow(&show_demo_window);
 
@@ -30,7 +30,6 @@ void work() {
     ImGui::Checkbox(
         "Demo Window",
         &show_demo_window); // Edit bools storing our window open/close state
-    ImGui::Checkbox("Another Window", &show_another_window);
 
     ImGui::SliderFloat("float", &f, 0.0f,
                        1.0f); // Edit 1 float using a slider from 0.0f to 1.0f
@@ -49,15 +48,4 @@ void work() {
     ImGui::End();
   }
 
-  // 3. Show another simple window.
-  if (show_another_window) {
-    ImGui::Begin(
-        "Another Window",
-        &show_another_window); // Pass a pointer to our bool variable (the
-                               // window will have a closing button that will
-                               // clear the bool when clicked)
-    if (ImGui::Button("Close Me"))
-      show_another_window = false;
-    ImGui::End();
-  }
 }
