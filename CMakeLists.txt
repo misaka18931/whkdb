@@ -30,9 +30,12 @@ target_include_directories(imgui PUBLIC
 # GLFW & OpenGL
 find_package(glfw3 REQUIRED)
 find_package(OpenGL REQUIRED)
+find_package(STB REQUIRED)
 
-add_executable(whkdb main.cpp)
+add_executable(whkdb main.cpp app.cpp)
 
+
+target_link_libraries(whkdb PUBLIC STB::Image)
 target_link_libraries(whkdb imgui)
 target_link_libraries(whkdb glfw)
 target_link_libraries(whkdb OpenGL)

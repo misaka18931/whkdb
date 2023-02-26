@@ -5,7 +5,7 @@
           "name": "Run target",
           "type": "cppdbg",
           "request": "launch",
-          "preLaunchTask": "CMake: clean rebuild",
+          "preLaunchTask": "CMake: build",
           "program": "${command:cmake.launchTargetPath}",
           "cwd": "${workspaceFolder}/build"
        }
